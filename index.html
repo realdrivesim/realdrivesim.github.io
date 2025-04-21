@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Dataset</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Helvetica, Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+    }
+
+    .hero video,
+    .hero img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+
+    .hero-text h1 {
+      font-size: 3.5em;
+      margin: 0;
+    }
+
+    .hero-text h2 {
+      font-size: 1.5em;
+      font-weight: normal;
+      margin-top: 10px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.4em;
+      color: #444;
+    }
+
+    p {
+      font-size: 1.1em;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-top: 60px;
+    }
+
+    .footer {
+      margin-top: 100px;
+      font-size: 0.9em;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <!-- Swap to <img src="your-image.jpg" alt="..." /> for image instead -->
+    <video autoplay muted loop playsinline>
+      <source src="your-background-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-text">
+      <h1>RealDriveSim: A Realistic Multi-Modal Multi-Task Synthetic Dataset for Autonomous Driving</h1>
+      <h2>Arpit Jadon*, Haoran Wang, Phillip Thomas, Michael Stanley, S. Nathaniel Cibik, Rachel Laurat, Omar Maher, Lukas Hoyer, Ozan Unal*, Dengxin Dai</h2>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Abstract</h2>
+    <p>As perception models continue to develop, the need for large-scale datasets increases. However, data annotation remains far too expensive to effectively scale 
+      and meet the demand. Synthetic datasets provide a solution to boost model performance with substantially reduced costs. However, current synthetic datasets remain
+      limited in their scope, realism, and are designed for specific tasks and applications. In this work, we present \dsname, a realistic multi-modal synthetic dataset
+      for autonomous driving that not only supports popular 2D computer vision applications but also their LiDAR counterparts, providing fine-grained annotations for up
+      to 64 classes. We extensively evaluate our dataset for a wide range of applications and domains, demonstrating state-of-the-art results compared to existing synthetic benchmarks.
+      The dataset is publicly available at <a href="https://realdrivesim.github.io/">https://realdrivesim.github.io/</a></p>
+
+    <div class="section">
+      <h2><a href="https://github.com/yourusername/yourdataset">GitHub Repository</a></h2>
+      <p>View the code and dataset on GitHub.</p>
+    </div>
+
+    <div class="section">
+      <h2><a href="https://your-dataset-download-link.com">Download Dataset</a></h2>
+      <p>Direct link to download the dataset archive (ZIP/TAR).</p>
+    </div>
+
+    <div class="section">
+      <h2><a href="https://your-paper-link.com">Read the Paper</a></h2>
+      <p>Access the publication describing this dataset in detail.</p>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Your Name or Institution
+    </div>
+  </div>
+
+</body>
+</html>
+
