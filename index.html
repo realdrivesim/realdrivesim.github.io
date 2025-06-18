@@ -13,33 +13,31 @@
       color: #000;
     }
 
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 80vh;
-      overflow: hidden;
-    }
+   .hero {
+   position: relative;
+   width: 100%;
+   aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+   overflow: hidden;
+   }
 
-    .hero video,
-    .hero img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
+  .hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 0;
+  }
 
-    .hero-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-    }
+  .hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+  z-index: 2;
+  }
 
     .hero-text h1 {
       font-size: 2.5em;
@@ -88,6 +86,52 @@
       font-size: 0.9em;
       color: #999;
     }
+
+  @media (max-width: 480px) {
+    .hero-text h1 {
+      font-size: 1.5em;
+    }
+
+    .hero-text h2 {
+      font-size: 0.9em;
+    }
+  }
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0,0,0,0.3));
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: 90%;
+  width: 900px;
+  backdrop-filter: blur(2px); /* subtle glass effect */
+}
+
+.hero-text h1 {
+  font-size: 2.2em;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.hero-text h2 {
+  font-size: 1em;
+  font-weight: 300;
+  color: #91ff00;
+  margin: 0;
+  line-height: 1.3;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+
   </style>
 </head>
 <body>
@@ -100,7 +144,9 @@
     </video>
     <div class="hero-text">
       <h1>RealDriveSim: A Realistic Multi-Modal Multi-Task Synthetic Dataset for Autonomous Driving</h1>
-      <h2>Arpit Jadon*, Haoran Wang, Phillip Thomas, Michael Stanley, S. Nathaniel Cibik, Rachel Laurat, Omar Maher, Lukas Hoyer, Ozan Unal*, Dengxin Dai</h2>
+      <h2 style="color: #91ff00;">
+        Arpit Jadon*, Haoran Wang, Phillip Thomas, Michael Stanley, S. Nathaniel Cibik, Rachel Laurat, Omar Maher, Lukas Hoyer, Ozan Unal*, Dengxin Dai
+      </h2>
     </div>
   </div>
 
@@ -108,7 +154,7 @@
     <h2>Abstract</h2>
     <p>As perception models continue to develop, the need for large-scale datasets increases. However, data annotation remains far too expensive to effectively scale 
       and meet the demand. Synthetic datasets provide a solution to boost model performance with substantially reduced costs. However, current synthetic datasets remain
-      limited in their scope, realism, and are designed for specific tasks and applications. In this work, we present \dsname, a realistic multi-modal synthetic dataset
+      limited in their scope, realism, and are designed for specific tasks and applications. In this work, we present RealDriveSim, a realistic multi-modal synthetic dataset
       for autonomous driving that not only supports popular 2D computer vision applications but also their LiDAR counterparts, providing fine-grained annotations for up
       to 64 classes. We extensively evaluate our dataset for a wide range of applications and domains, demonstrating state-of-the-art results compared to existing synthetic benchmarks.
       The dataset is publicly available at <a href="https://realdrivesim.github.io/">https://realdrivesim.github.io/</a></p>
@@ -118,9 +164,69 @@
       <p>View the code and dataset on GitHub.</p>
     </div> -->
 
-    <div class="section">
-      <h2><a>Download Dataset</a></h2>
-    </div>
+<div class="section">
+  <h2>Comparison with Existing Synthetic Datasets</h2>
+  <div style="overflow-x: auto;">
+    <table style="width:100%; border-collapse: collapse; font-size: 0.85em; text-align: center; border: 1px solid #ccc;">
+      <thead>
+        <tr style="background-color: #f2f2f2;">
+          <th rowspan="2" style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">Dataset</th>
+          <th colspan="8" style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">Camera</th>
+          <th colspan="6" style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">LiDAR</th>
+        </tr>
+        <tr style="background-color: #f9f9f9;">
+          <th style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">Adverse-W</th>
+          <th style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">2D Seg.</th>
+          <th style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">Sem-Cls.</th>
+          <th style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">2D Det.</th>
+          <th style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">3D Det.</th>
+          <th style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">Depth</th>
+          <th style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">Optical-Flow</th>
+          <th style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">MOT</th>
+          <th style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">3D Det.</th>
+          <th style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">3D Seg.</th>
+          <th style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">Sem-Cls.</th>
+          <th style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">Scene-Flow</th>
+          <th style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">MOT</th>
+          <th style="padding: 6px 8px; white-space: nowrap; border: 1px solid #ccc;">SLAM</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <td style="padding: 6px 8px; border: 1px solid #ccc;">SYNTHIA</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td>22</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: red;">❌</span></td><td style="border-right: 1px solid #ccc;"><span style="color: red;">❌</span></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr>
+<tr>
+  <td style="padding: 6px 8px; border: 1px solid #ccc;">GTA-V</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td>19</td><td><span style="color: red;">❌</span></td><td><span style="color: red;">❌</span></td><td><span style="color: red;">❌</span></td><td><span style="color: red;">❌</span></td><td style="border-right: 1px solid #ccc;"><span style="color: red;">❌</span></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr>
+<tr>
+  <td style="padding: 6px 8px; border: 1px solid #ccc;">VIPER</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td>32</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: red;">❌</span></td><td><span style="color: green;">✅</span></td><td style="border-right: 1px solid #ccc;"><span style="color: green;">✅</span></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr>
+<tr>
+  <td style="padding: 6px 8px; border: 1px solid #ccc;">Synscapes</td><td><span style="color: red;">❌</span></td><td><span style="color: green;">✅</span></td><td>19</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: red;">❌</span></td><td style="border-right: 1px solid #ccc;"><span style="color: red;">❌</span></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr>
+<tr>
+  <td style="padding: 6px 8px; border: 1px solid #ccc;">SHIFT</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td>23</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td style="border-right: 1px solid #ccc;"><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: red;">❌</span></td><td>-</td><td><span style="color: red;">❌</span></td><td><span style="color: green;">✅</span></td><td><span style="color: red;">❌</span></td>
+</tr>
+<tr>
+  <td style="padding: 6px 8px; border: 1px solid #ccc;">PreSIL</td><td><span style="color: red;">❌</span></td><td><span style="color: green;">✅</span></td><td>12</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: red;">❌</span></td><td style="border-right: 1px solid #ccc;"><span style="color: red;">❌</span></td><td><span style="color: green;">✅</span></td><td><span style="color: red;">❌</span></td><td>12</td><td><span style="color: red;">❌</span></td><td><span style="color: red;">❌</span></td><td><span style="color: red;">❌</span></td>
+</tr>
+<tr>
+  <td style="padding: 6px 8px; border: 1px solid #ccc;">SynLIDAR</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td style="border-right: 1px solid #ccc;">-</td><td><span style="color: red;">❌</span></td><td><span style="color: green;">✅</span></td><td>32</td><td><span style="color: red;">❌</span></td><td><span style="color: red;">❌</span></td><td><span style="color: red;">❌</span></td>
+</tr>
+<tr style="background-color: #fef9f3;">
+  <td style="padding: 6px 8px; border: 1px solid #ccc;"><strong>RealDriveSim</strong></td>
+  <td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><strong>61</strong></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td style="border-right: 1px solid #ccc;"><span style="color: green;">✅</span></td>
+  <td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><strong>64</strong></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td>
+</tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section">
+     <h2><span>Download Dataset</span></h2>
+</div>
 
 <!-- START: Normal Weather -->
 <div style="border: 1px solid #ccc; border-radius: 10px; padding: 25px; margin-bottom: 60px; background-color: #fafafa; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
@@ -182,7 +288,7 @@
       </tr>
       <tr>
         <td style="padding: 10px; border-bottom: 1px solid #eee;">3D Object Detection</td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather/bounding_box_3d.zip" target="_blank">32 GB</a></td>
+        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather/bounding_box_3d.zip" target="_blank">62 GB</a></td>
       </tr>
       <tr>
         <td style="padding: 10px; border-bottom: 1px solid #eee;">3D Semantic Segmentation</td>
@@ -235,68 +341,68 @@
     </thead>
     <tbody>
 
-      <!-- 2D Section -->
-      <tr>
-        <td colspan="2" style="padding: 10px; font-weight: bold; background-color: #e8f6fc; border-top: 1px solid #ccc;">2D Modalities</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">Images (RGB)</td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/rgb.zip" target="_blank">73.52 GB</a></td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">2D Object Detection</td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/bounding_box_2d.zip" target="_blank">367.51 MB</a></td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">2D Semantic Segmentation</td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/semantic_segmentation_2d.zip" target="_blank">1.55 GB</a></td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">2D Instance Segmentation</td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/instance_segmentation_2d.zip" target="_blank">522.26 MB</a></td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">Depth Maps</td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/depth.zip" target="_blank">121.13 GB</a></td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">2D Motion Vectors / Optical Flow</td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/motion_vectors_2d.zip" target="_blank">19.18 GB</a></td>
-      </tr>
+	      <!-- 2D Section -->
+	      <tr>
+		<td colspan="2" style="padding: 10px; font-weight: bold; background-color: #e8f6fc; border-top: 1px solid #ccc;">2D Modalities</td>
+	      </tr>
+	      <tr>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;">Images (RGB)</td>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/rgb.zip" target="_blank">73.52 GB</a></td>
+	      </tr>
+	      <tr>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;">2D Object Detection</td>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/bounding_box_2d.zip" target="_blank">367.51 MB</a></td>
+	      </tr>
+	      <tr>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;">2D Semantic Segmentation</td>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/semantic_segmentation_2d.zip" target="_blank">1.55 GB</a></td>
+	      </tr>
+	      <tr>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;">2D Instance Segmentation</td>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/instance_segmentation_2d.zip" target="_blank">522.26 MB</a></td>
+	      </tr>
+	      <tr>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;">Depth Maps</td>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/depth.zip" target="_blank">121.13 GB</a></td>
+	      </tr>
+	      <tr>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;">2D Motion Vectors / Optical Flow</td>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/motion_vectors_2d.zip" target="_blank">19.18 GB</a></td>
+	      </tr>
 
-      <!-- 3D Section -->
-      <tr>
-        <td colspan="2" style="padding: 10px; font-weight: bold; background-color: #fce8e8; border-top: 2px solid #ccc;">3D Modalities</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">3D Point Clouds</td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/point_cloud.zip" target="_blank">86.09 GB</a></td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">3D Object Detection</td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/bounding_box_3d.zip" target="_blank">12.40 GB</a></td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">3D Semantic Segmentation</td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/semantic_segmentation_3d.zip" target="_blank">725.52 MB</a></td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">3D Instance Segmentation</td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/instance_segmentation_3d.zip" target="_blank">268.09 MB</a></td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">3D Motion Vectors / Scene Flow</td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/motion_vectors_3d.zip" target="_blank">19.60 GB</a></td>
-      </tr>
+	      <!-- 3D Section -->
+	      <tr>
+		<td colspan="2" style="padding: 10px; font-weight: bold; background-color: #fce8e8; border-top: 2px solid #ccc;">3D Modalities</td>
+	      </tr>
+	      <tr>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;">3D Point Clouds</td>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/point_cloud.zip" target="_blank">86.09 GB</a></td>
+	      </tr>
+	      <tr>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;">3D Object Detection</td>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/bounding_box_3d.zip" target="_blank">12.40 GB</a></td>
+	      </tr>
+	      <tr>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;">3D Semantic Segmentation</td>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/semantic_segmentation_3d.zip" target="_blank">725.52 MB</a></td>
+	      </tr>
+	      <tr>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;">3D Instance Segmentation</td>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/instance_segmentation_3d.zip" target="_blank">268.09 MB</a></td>
+	      </tr>
+	      <tr>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;">3D Motion Vectors / Scene Flow</td>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/motion_vectors_3d.zip" target="_blank">19.60 GB</a></td>
+	      </tr>
 
-      <!-- Calibration -->
-      <tr>
-        <td colspan="2" style="padding: 10px; font-weight: bold; background-color: #f6f6f6; border-top: 2px solid #ccc;">Other</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px;">Calibration Data</td>
-        <td style="padding: 10px;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/calibration.zip" target="_blank">6 MB</a></td>
-      </tr>
+	      <!-- Calibration -->
+	      <tr>
+		<td colspan="2" style="padding: 10px; font-weight: bold; background-color: #f6f6f6; border-top: 2px solid #ccc;">Other</td>
+	      </tr>
+	      <tr>
+		<td style="padding: 10px;">Calibration Data</td>
+		<td style="padding: 10px;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/calibration.zip" target="_blank">6 MB</a></td>
+	      </tr>
 
     </tbody>
   </table>
