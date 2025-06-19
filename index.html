@@ -164,6 +164,20 @@
 .summary-table tbody tr:nth-child(even) {
   background-color: #fafafa;
 }
+
+  .symbol {
+    font-size: 1.2em;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 1;
+  }
+  .tick {
+    color: green;
+  }
+  .cross {
+    color: red;
+  }
+
   </style>
 </head>
 <body>
@@ -225,30 +239,42 @@
       </thead>
       <tbody>
 <tr>
-  <td style="padding: 6px 8px; border: 1px solid #ccc;">SYNTHIA</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td>22</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: red;">❌</span></td><td style="border-right: 1px solid #ccc;"><span style="color: red;">❌</span></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+  <td style="padding: 6px 8px; border: 1px solid #ccc;">SYNTHIA</td><td><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td>22</td><td><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td><span class="symbol cross">✗</span></td><td style="border-right: 1px solid #ccc;"><span class="symbol cross">✗</span></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
 </tr>
 <tr>
-  <td style="padding: 6px 8px; border: 1px solid #ccc;">GTA-V</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td>19</td><td><span style="color: red;">❌</span></td><td><span style="color: red;">❌</span></td><td><span style="color: red;">❌</span></td><td><span style="color: red;">❌</span></td><td style="border-right: 1px solid #ccc;"><span style="color: red;">❌</span></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+  <td style="padding: 6px 8px; border: 1px solid #ccc;">GTA-V</td><td><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td>19</td><td><span class="symbol cross">✗</span></td><td><span class="symbol cross">✗</span></td><td><span class="symbol cross">✗</span></td><td><span class="symbol cross">✗</span></td><td style="border-right: 1px solid #ccc;"><span class="symbol cross">✗</span></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
 </tr>
 <tr>
-  <td style="padding: 6px 8px; border: 1px solid #ccc;">VIPER</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td>32</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: red;">❌</span></td><td><span style="color: green;">✅</span></td><td style="border-right: 1px solid #ccc;"><span style="color: green;">✅</span></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+  <td style="padding: 6px 8px; border: 1px solid #ccc;">VIPER</td><td><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td>32</td><td><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td><span class="symbol cross">✗</span></td><td><span class="symbol tick">✓</span></td><td style="border-right: 1px solid #ccc;"><span class="symbol tick">✓</span></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
 </tr>
 <tr>
-  <td style="padding: 6px 8px; border: 1px solid #ccc;">Synscapes</td><td><span style="color: red;">❌</span></td><td><span style="color: green;">✅</span></td><td>19</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: red;">❌</span></td><td style="border-right: 1px solid #ccc;"><span style="color: red;">❌</span></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+  <td style="padding: 6px 8px; border: 1px solid #ccc;">Synscapes</td><td><span class="symbol cross">✗</span></td><td><span class="symbol tick">✓</span></td><td>19</td><td><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td><span class="symbol cross">✗</span></td><td style="border-right: 1px solid #ccc;"><span class="symbol cross">✗</span></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
 </tr>
 <tr>
-  <td style="padding: 6px 8px; border: 1px solid #ccc;">SHIFT</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td>23</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td style="border-right: 1px solid #ccc;"><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: red;">❌</span></td><td>-</td><td><span style="color: red;">❌</span></td><td><span style="color: green;">✅</span></td><td><span style="color: red;">❌</span></td>
+  <td style="padding: 6px 8px; border: 1px solid #ccc;">SHIFT</td><td><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td>23</td><td><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td style="border-right: 1px solid #ccc;"><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td><span class="symbol cross">✗</span></td><td>-</td><td><span class="symbol cross">✗</span></td><td><span class="symbol tick">✓</span></td><td><span class="symbol cross">✗</span></td>
 </tr>
 <tr>
-  <td style="padding: 6px 8px; border: 1px solid #ccc;">PreSIL</td><td><span style="color: red;">❌</span></td><td><span style="color: green;">✅</span></td><td>12</td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: red;">❌</span></td><td style="border-right: 1px solid #ccc;"><span style="color: red;">❌</span></td><td><span style="color: green;">✅</span></td><td><span style="color: red;">❌</span></td><td>12</td><td><span style="color: red;">❌</span></td><td><span style="color: red;">❌</span></td><td><span style="color: red;">❌</span></td>
+  <td style="padding: 6px 8px; border: 1px solid #ccc;">PreSIL</td><td><span class="symbol cross">✗</span></td><td><span class="symbol tick">✓</span></td><td>12</td><td><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td><span class="symbol tick">✓</span></td><td><span class="symbol cross">✗</span></td><td style="border-right: 1px solid #ccc;"><span class="symbol cross">✗</span></td><td><span class="symbol tick">✓</span></td><td><span class="symbol cross">✗</span></td><td>12</td><td><span class="symbol cross">✗</span></td><td><span class="symbol cross">✗</span></td><td><span class="symbol cross">✗</span></td>
 </tr>
 <tr>
-  <td style="padding: 6px 8px; border: 1px solid #ccc;">SynLIDAR</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td style="border-right: 1px solid #ccc;">-</td><td><span style="color: red;">❌</span></td><td><span style="color: green;">✅</span></td><td>32</td><td><span style="color: red;">❌</span></td><td><span style="color: red;">❌</span></td><td><span style="color: red;">❌</span></td>
+  <td style="padding: 6px 8px; border: 1px solid #ccc;">SynLIDAR</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td style="border-right: 1px solid #ccc;">-</td><td><span class="symbol cross">✗</span></td><td><span class="symbol tick">✓</span></td><td>32</td><td><span class="symbol cross">✗</span></td><td><span class="symbol cross">✗</span></td><td><span class="symbol cross">✗</span></td>
 </tr>
 <tr style="background-color: #fef9f3;">
-  <td style="padding: 6px 8px; border: 1px solid #ccc;"><strong>RealDriveSim</strong></td>
-  <td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><strong>61</strong></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td style="border-right: 1px solid #ccc;"><span style="color: green;">✅</span></td>
-  <td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><strong>64</strong></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td><td><span style="color: green;">✅</span></td>
+  <td style="padding: 6px 8px; border: 1px solid #ccc; border-top: 2px solid #ccc;"><strong>RealDriveSim</strong></td>
+  <td style="border-top: 1px solid #ccc;"><span class="symbol tick">✓</span></td>
+  <td style="border-top: 1px solid #ccc;"><span class="symbol tick">✓</span></td>
+  <td style="border-top: 1px solid #ccc;"><strong>61</strong></td>
+  <td style="border-top: 1px solid #ccc;"><span class="symbol tick">✓</span></td>
+  <td style="border-top: 1px solid #ccc;"><span class="symbol tick">✓</span></td>
+  <td style="border-top: 1px solid #ccc;"><span class="symbol tick">✓</span></td>
+  <td style="border-top: 1px solid #ccc;"><span class="symbol tick">✓</span></td>
+  <td style="border-right: 1px solid #ccc; border-top: 1px solid #ccc;"><span class="symbol tick">✓</span></td>
+  <td style="border-top: 1px solid #ccc;"><span class="symbol tick">✓</span></td>
+  <td style="border-top: 1px solid #ccc;"><span class="symbol tick">✓</span></td>
+  <td style="border-top: 1px solid #ccc;"><strong>64</strong></td>
+  <td style="border-top: 1px solid #ccc;"><span class="symbol tick">✓</span></td>
+  <td style="border-top: 1px solid #ccc;"><span class="symbol tick">✓</span></td>
+  <td style="border-top: 1px solid #ccc;"><span class="symbol tick">✓</span></td>
 </tr>
 
       </tbody>
@@ -661,7 +687,7 @@
   </div>
 </div>
 
-<div style="border-left: 4px solid #d1495b; background-color: #fff7f7; padding: 16px 20px; margin-top: 40px; margin-bottom: 20px; font-size: 1em; color: #333; border-radius: 6px;">
+<!-- <div style="border-left: 4px solid #d1495b; background-color: #fff7f7; padding: 16px 20px; margin-top: 40px; margin-bottom: 20px; font-size: 1em; color: #333; border-radius: 6px;">
   <p style="margin: 10px 0 0;">
     <strong>Note 1:</strong> The experiments in our paper were conducted using a combined dataset consisting of  
     <br><strong>Normal Weather – Sampled Dataset</strong>, <strong>Adverse Weather [Batch 1]</strong>, and <strong>Adverse Weather [Batch 2]</strong>.  
@@ -670,8 +696,18 @@
   <p style="margin: 10px 0 0;">
     <strong>Note 2:</strong> Compared to the dataset used in the paper, we have added one additional sequence each to Adverse Weather Batch 1 and Batch 2.
   </p>
-</div>
+</div> -->
 
+<div style="border-left: 4px solid #d1495b; background-color: #fff7f7; padding: 16px 20px; margin-top: 40px; margin-bottom: 20px; font-size: 1em; color: #333; border-radius: 6px; text-align: justify;">
+  <p style="margin: 10px 0 0;">
+    <strong>Note 1:</strong> The experiments in our paper were conducted using a combined dataset consisting of  
+    <strong>Normal Weather – Sampled Dataset</strong>, <strong>Adverse Weather [Batch 1]</strong>, and <strong>Adverse Weather [Batch 2]</strong>.  
+    If the full Normal Weather dataset is too large for your needs, we recommend using the same sampled version as used in our experiments.
+  </p>
+  <p style="margin: 10px 0 0;">
+    <strong>Note 2:</strong> Compared to the dataset used in the paper, we have added one additional sequence each to Adverse Weather Batch 1 and Batch 2.
+  </p>
+</div>
     <!-- <div class="section">
       <h2><a href="https://your-paper-link.com">Read the Paper</a></h2>
       <p>Access the publication describing this dataset in detail.</p>
