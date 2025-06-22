@@ -235,6 +235,23 @@
     margin-top: 20px;
   }
 
+    /* Remove unwanted vertical spacing below the main tab buttons */
+    .tab-content .section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Also remove spacing between sub-tab buttons and heading */
+  .mapping-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Optional: remove spacing from h2 under sub-tabs */
+  .mapping-content h2 {
+    margin-top: 4px !important;
+  }
+
   </style>
 </head>
 
@@ -1057,7 +1074,7 @@ border-bottom: 1px solid #ddd;
                 <th style="padding: 10px; text-align: center; text-align: center; border: 1px solid #ccc;">SemanticKITTI Label</th>
               </tr>
               </thead>
-              <body>
+              <tbody>
               <tr><td style="padding: 8px; text-align: center; border: 1px solid #ccc;">Animal</td><td style="padding: 8px; text-align: center; border: 1px solid #ccc;">unlabeled</td></tr>
               <tr><td style="padding: 8px; text-align: center; border: 1px solid #ccc;">Bicycle</td><td style="padding: 8px; text-align: center; border: 1px solid #ccc;">bicyclist</td></tr>
               <tr><td style="padding: 8px; text-align: center; border: 1px solid #ccc;">Bicycle(Parked)</td><td style="padding: 8px; text-align: center; border: 1px solid #ccc;">bicycle</td></tr>
@@ -1150,9 +1167,12 @@ border-bottom: 1px solid #ddd;
       
       
     </div>
+  </div>  <!-- end of all tab-content sections -->
 
-
-    
+    <footer style="background-color: #f9f9f9; padding: 20px; text-align: center; font-size: 0.9em; color: #555; margin-top: 40px; border-top: 1px solid #ddd;">
+      <p><strong>Contact:</strong><a href="mailto:arpit.jadon@dlr.de" style="color: #d1495b; text-decoration: none;"> arpit.jadon@dlr.de</a></p>
+      <!-- <p>&copy; 2025 RealDriveSim Dataset</p> -->
+    </footer>
     
     <script>
       function openTab(tabId) {
