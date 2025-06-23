@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RealDriveSim</title>
   <link rel="icon" type="image/png" href="data/realdrivesim_icon.png">
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pjwXQ5PisB+QgxkfwL+9M8EDJycz2B+Q0j0sZ9KFIrUd0bkWtwPWKSGr+JXw5hCv9y6EeWG3jDaZP3pv86+xKg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <style>
+
     body {
       margin: 0;
       font-family: Helvetica, Arial, sans-serif;
@@ -280,6 +289,32 @@
     color: #888;
   }
 
+  /* Base styling for all icon-links */
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.6em 1em;
+    margin: 0 0.5em;
+    border-radius: 999px;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+
+  /* Slight hover effect */
+  .icon-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /* Icon sizing */
+  .icon-btn i {
+    font-size: 1.1em;
+    line-height: 1;
+  }
+  
   </style>
 </head>
 
@@ -329,6 +364,7 @@
 
   <hr style="margin: 0; border: none; border-top: 1px solid #eee;" />
 
+  
   <!-- Title + Author block below video -->
 <div style="
 text-align: center;
@@ -357,8 +393,36 @@ border-bottom: 1px solid #ddd;
 ">
   Arpit Jadon*, Haoran Wang, Phillip Thomas, Michael Stanley, S. Nathaniel Cibik, Rachel Laurat, Omar Maher, Lukas Hoyer, Ozan Unal*, Dengxin Dai
 </p>
-</div>
+<p style="text-align:center; margin:1rem 0;">
+  <!-- <a href="https://arxiv.org/abs/XXXX.XXXXX"
+     class="icon-btn"
+     target="_blank" title="Read the paper">
+    <i class="fas fa-file-pdf"></i>
+    Paper
+  </a> -->
 
+  <a href="https://arxiv.org/abs/2506.16319"
+     class="icon-btn"
+     target="_blank" title="View on arXiv">
+    <i class="fas fa-file-alt"></i>
+    Paper
+  </a>
+
+  <a href="#downloads"
+     class="icon-btn"
+     title="Download dataset">
+    <i class="fas fa-download"></i>
+    Download Dataset
+  </a>
+
+  <a href="https://arxiv.org/bibtex/2506.16319"
+     class="icon-btn"
+     title="Download BibTeX">
+    <i class="fas fa-file-code"></i>
+    BibTeX
+  </a>
+</p>
+</div>
 
   <div class="container">
     <h2>Abstract</h2>
