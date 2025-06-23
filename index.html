@@ -252,6 +252,34 @@
     margin-top: 4px !important;
   }
 
+  .site-footer {
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: #f9f9f9;
+    border-top: 1px solid #ddd;
+    color: #555;
+  }
+  .site-footer a {
+    color: #d1495b;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .site-footer a:hover {
+    text-decoration: underline;
+  }
+  .site-footer .license-badge {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+  .site-footer .meta {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #888;
+  }
+
   </style>
 </head>
 
@@ -1169,9 +1197,23 @@ border-bottom: 1px solid #ddd;
     </div>
   </div>  <!-- end of all tab-content sections -->
 
-    <footer style="background-color: #f9f9f9; padding: 20px; text-align: center; font-size: 0.9em; color: #555; margin-top: 40px; border-top: 1px solid #ddd;">
-      <p><strong>Contact:</strong><a href="mailto:arpit.jadon@dlr.de" style="color: #d1495b; text-decoration: none;"> arpit.jadon@dlr.de</a></p>
-      <!-- <p>&copy; 2025 RealDriveSim Dataset</p> -->
+    <footer class="site-footer">
+      <p>
+        <strong>Contact:</strong>
+        <a href="mailto:arpit.jadon@dlr.de">arpit.jadon@dlr.de</a>
+      </p>
+      <p>
+        <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+          <img
+            class="license-badge"
+            src="https://i.creativecommons.org/l/by/4.0/88x31.png"
+            alt="CC BY 4.0 badge" />
+          Licensed under <abbr title="Creative Commons Attribution 4.0 International">CC BY 4.0</abbr>
+        </a>
+      </p>
+      <!-- <p class="meta">
+        <a href="/LICENSE" title="Full license text">View full license</a>
+      </p> -->
     </footer>
     
     <script>
