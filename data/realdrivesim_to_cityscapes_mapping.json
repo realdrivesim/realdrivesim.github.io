@@ -1,0 +1,362 @@
+{
+  "0": {
+    "realdrivesim_name": "Animal",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "dynamic"
+  },
+  "1": {
+    "realdrivesim_name": "Bicycle",
+    "cityscapes_train_id": 18,
+    "cityscapes_name": "bicycle"
+  },
+  "2": {
+    "realdrivesim_name": "Bicyclist",
+    "cityscapes_train_id": 12,
+    "cityscapes_name": "rider"
+  },
+  "3": {
+    "realdrivesim_name": "Building",
+    "cityscapes_train_id": 2,
+    "cityscapes_name": "building"
+  },
+  "4": {
+    "realdrivesim_name": "Bus",
+    "cityscapes_train_id": 15,
+    "cityscapes_name": "bus"
+  },
+  "5": {
+    "realdrivesim_name": "Car",
+    "cityscapes_train_id": 13,
+    "cityscapes_name": "car"
+  },
+  "6": {
+    "realdrivesim_name": "Caravan/RV",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "caravan"
+  },
+  "8": {
+    "realdrivesim_name": "CrossWalk",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "9": {
+    "realdrivesim_name": "Fence",
+    "cityscapes_train_id": 4,
+    "cityscapes_name": "fence"
+  },
+  "10": {
+    "realdrivesim_name": "HorizontalPole",
+    "cityscapes_train_id": 5,
+    "cityscapes_name": "pole"
+  },
+  "11": {
+    "realdrivesim_name": "LaneMarking",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "12": {
+    "realdrivesim_name": "LimitLine",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "13": {
+    "realdrivesim_name": "Motorcycle",
+    "cityscapes_train_id": 17,
+    "cityscapes_name": "motorcycle"
+  },
+  "14": {
+    "realdrivesim_name": "Motorcyclist",
+    "cityscapes_train_id": 12,
+    "cityscapes_name": "rider"
+  },
+  "15": {
+    "realdrivesim_name": "OtherDriveableSurface",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "parking"
+  },
+  "16": {
+    "realdrivesim_name": "OtherFixedStructure",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "static"
+  },
+  "17": {
+    "realdrivesim_name": "OtherMovable",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "dynamic"
+  },
+  "18": {
+    "realdrivesim_name": "OtherRider",
+    "cityscapes_train_id": 12,
+    "cityscapes_name": "rider"
+  },
+  "19": {
+    "realdrivesim_name": "Overpass/Bridge/Tunnel",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "bridge"
+  },
+  "20": {
+    "realdrivesim_name": "OwnCar(EgoCar)",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "ego vehicle"
+  },
+  "21": {
+    "realdrivesim_name": "ParkingMeter",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "static"
+  },
+  "22": {
+    "realdrivesim_name": "Pedestrian",
+    "cityscapes_train_id": 11,
+    "cityscapes_name": "person"
+  },
+  "23": {
+    "realdrivesim_name": "Railway",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "rail track"
+  },
+  "24": {
+    "realdrivesim_name": "Road",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "25": {
+    "realdrivesim_name": "RoadBarriers",
+    "cityscapes_train_id": 3,
+    "cityscapes_name": "wall"
+  },
+  "26": {
+    "realdrivesim_name": "RoadBoundary(Curb)",
+    "cityscapes_train_id": 1,
+    "cityscapes_name": "sidewalk"
+  },
+  "27": {
+    "realdrivesim_name": "RoadMarking",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "28": {
+    "realdrivesim_name": "SideWalk",
+    "cityscapes_train_id": 1,
+    "cityscapes_name": "sidewalk"
+  },
+  "29": {
+    "realdrivesim_name": "Sky",
+    "cityscapes_train_id": 10,
+    "cityscapes_name": "sky"
+  },
+  "30": {
+    "realdrivesim_name": "TemporaryConstructionObject",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "dynamic"
+  },
+  "31": {
+    "realdrivesim_name": "Terrain",
+    "cityscapes_train_id": 9,
+    "cityscapes_name": "terrain"
+  },
+  "32": {
+    "realdrivesim_name": "TowedObject",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "trailer"
+  },
+  "33": {
+    "realdrivesim_name": "TrafficLight",
+    "cityscapes_train_id": 6,
+    "cityscapes_name": "traffic light"
+  },
+  "34": {
+    "realdrivesim_name": "TrafficSign",
+    "cityscapes_train_id": 7,
+    "cityscapes_name": "traffic sign"
+  },
+  "35": {
+    "realdrivesim_name": "Train",
+    "cityscapes_train_id": 16,
+    "cityscapes_name": "train"
+  },
+  "36": {
+    "realdrivesim_name": "Truck",
+    "cityscapes_train_id": 14,
+    "cityscapes_name": "truck"
+  },
+  "37": {
+    "realdrivesim_name": "Vegetation",
+    "cityscapes_train_id": 8,
+    "cityscapes_name": "vegetation"
+  },
+  "38": {
+    "realdrivesim_name": "VerticalPole",
+    "cityscapes_train_id": 5,
+    "cityscapes_name": "pole"
+  },
+  "39": {
+    "realdrivesim_name": "WheeledSlow",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "dynamic"
+  },
+  "40": {
+    "realdrivesim_name": "LaneMarkingOther",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "41": {
+    "realdrivesim_name": "LaneMarkingGap",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "42": {
+    "realdrivesim_name": "Fence(Transparent)",
+    "cityscapes_train_id": 4,
+    "cityscapes_name": "fence"
+  },
+  "43": {
+    "realdrivesim_name": "StaticObject(Trashcan)",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "static"
+  },
+  "44": {
+    "realdrivesim_name": "Vegetation(Bush)",
+    "cityscapes_train_id": 8,
+    "cityscapes_name": "vegetation"
+  },
+  "45": {
+    "realdrivesim_name": "OtherPole",
+    "cityscapes_train_id": 5,
+    "cityscapes_name": "pole"
+  },
+  "46": {
+    "realdrivesim_name": "Powerline",
+    "cityscapes_train_id": 10,
+    "cityscapes_name": "sky"
+  },
+  "47": {
+    "realdrivesim_name": "SchoolBus",
+    "cityscapes_train_id": 15,
+    "cityscapes_name": "bus"
+  },
+  "48": {
+    "realdrivesim_name": "ParkingLot",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "parking"
+  },
+  "49": {
+    "realdrivesim_name": "RoadMarkingSpeed",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "50": {
+    "realdrivesim_name": "Vegetation(GroundCover)",
+    "cityscapes_train_id": 8,
+    "cityscapes_name": "vegetation"
+  },
+  "51": {
+    "realdrivesim_name": "Vegetation(Grass)",
+    "cityscapes_train_id": 8,
+    "cityscapes_name": "vegetation"
+  },
+  "52": {
+    "realdrivesim_name": "Vegetation(Tree)",
+    "cityscapes_train_id": 8,
+    "cityscapes_name": "vegetation"
+  },
+  "53": {
+    "realdrivesim_name": "Debris",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "dynamic"
+  },
+  "54": {
+    "realdrivesim_name": "RoadBoundary(CurbFlat)",
+    "cityscapes_train_id": 1,
+    "cityscapes_name": "sidewalk"
+  },
+  "55": {
+    "realdrivesim_name": "LaneMarking(Parking)",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "parking"
+  },
+  "56": {
+    "realdrivesim_name": "LaneMarking(ParkingIndicator)",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "57": {
+    "realdrivesim_name": "RoadMarkingArrows",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "58": {
+    "realdrivesim_name": "RoadMarkingBottsDots",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "59": {
+    "realdrivesim_name": "StopLine",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "60": {
+    "realdrivesim_name": "ChannelizingDevice",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "dynamic"
+  },
+  "61": {
+    "realdrivesim_name": "LaneMarkingSpan",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "62": {
+    "realdrivesim_name": "StaticObject(BikeRack)",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "static"
+  },
+  "63": {
+    "realdrivesim_name": "ParkingSpot",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "64": {
+    "realdrivesim_name": "RoadBoundary(CurbTop)",
+    "cityscapes_train_id": 1,
+    "cityscapes_name": "sidewalk"
+  },
+  "65": {
+    "realdrivesim_name": "RoadBoundary(CurbSide)",
+    "cityscapes_train_id": 1,
+    "cityscapes_name": "sidewalk"
+  },
+  "66": {
+    "realdrivesim_name": "RoadBoundary(CurbRoadLevel)",
+    "cityscapes_train_id": 0,
+    "cityscapes_name": "road"
+  },
+  "67": {
+    "realdrivesim_name": "Water",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "ground"
+  },
+  "68": {
+    "realdrivesim_name": "GuardRail",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "guard rail"
+  },
+  "69": {
+    "realdrivesim_name": "Wall",
+    "cityscapes_train_id": 3,
+    "cityscapes_name": "wall"
+  },
+  "103": {
+    "realdrivesim_name": "Van",
+    "cityscapes_train_id": 13,
+    "cityscapes_name": "car"
+  },
+  "104": {
+    "realdrivesim_name": "ConstructionVehicle(Truck)",
+    "cityscapes_train_id": 14,
+    "cityscapes_name": "truck"
+  },
+  "255": {
+    "realdrivesim_name": "Void",
+    "cityscapes_train_id": 255,
+    "cityscapes_name": "unlabeled"
+  }
+}

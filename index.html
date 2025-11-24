@@ -328,26 +328,27 @@
     font-size: 1.1em;
     line-height: 1;
   }
+
+  .download-json-btn {
+    display: inline-block;
+    background-color: #4CAF50; /* A nice green */
+    color: white;
+    padding: 8px 16px;
+    margin: 10px 0 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .download-json-btn:hover {
+    background-color: #45a049;
+  }
   
   </style>
 </head>
-
-<script>
-  function openMapping(evt, mappingName) {
-    const tabs = document.getElementsByClassName("mapping-content");
-    for (let i = 0; i < tabs.length; i++) {
-      tabs[i].style.display = "none";
-    }
-  
-    const buttons = document.getElementsByClassName("map-tab");
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove("active");
-    }
-  
-    document.getElementById(mappingName).style.display = "block";
-    evt.currentTarget.classList.add("active");
-  }
-  </script>
   
 <body>
 
@@ -447,7 +448,7 @@
           <th style="padding: 6px 8px; white-space: nowrap; text-align: center; border: 1px solid #ccc;">Sem-Cls.</th>
           <th style="padding: 6px 8px; white-space: nowrap; text-align: center; border: 1px solid #ccc;">Scene-Flow</th>
           <th style="padding: 6px 8px; white-space: nowrap; text-align: center; border: 1px solid #ccc;">MOT</th>
-          <th style="padding: 6px 8px; white-space: nowrap; text-align: center; border: 1px solid #ccc;">SLAM</th>
+          <th style="padding: 8px; white-space: nowrap; text-align: center; border: 1px solid #ccc;">SLAM</th>
         </tr>
       </thead>
       <tbody>
@@ -948,13 +949,16 @@
     <div class="section" id="mappings">
     
       <div style="text-align: center; margin-bottom: 20px;">
-        <button class="map-tab" onclick="openMapping(event, 'realdrivesim')">RealDriveSim</button>
-        <button class="map-tab active" onclick="openMapping(event, 'cityscapes')">Cityscapes</button>
+        <button class="map-tab active" onclick="openMapping(event, 'realdrivesim')">RealDriveSim</button>
+        <button class="map-tab" onclick="openMapping(event, 'cityscapes')">Cityscapes</button>
         <button class="map-tab" onclick="openMapping(event, 'semantickitti')">SemanticKITTI</button>
       </div>
 
-      <div id="realdrivesim" class="mapping-content" style="display: none;">
+      <div id="realdrivesim" class="mapping-content" style="display: block;">
         <h2 style="color: #d1495b; text-align: center;">RealDriveSim Label Names → Label IDs</h2>
+        <div style="text-align: center;">
+          <button class="download-json-btn" data-json-path="data/realdrivesim_mapping.json">Download as JSON</button>
+        </div>
         <div style="overflow-x: auto; margin-top: 20px;">
           <table style="border-collapse: collapse; width: 90%; max-width: 900px; font-size: 0.9em; border: 1px solid #ccc; margin: auto;">
             <thead style="background-color: #f9f9f9;">
@@ -1052,8 +1056,11 @@
         </div>
       </div>      
     
-      <div id="cityscapes" class="mapping-content" style="display: block;">
+      <div id="cityscapes" class="mapping-content" style="display: none;">
       <h2 style="color: #d1495b; text-align: center;">RealDriveSim → Cityscapes</h2>
+      <div style="text-align: center;">
+        <button class="download-json-btn" data-json-path="data/realdrivesim_to_cityscapes_mapping.json">Download as JSON</button>
+      </div>
       <div style="overflow-x: auto; margin: 20px auto; max-width: 850px;">
       <table style="margin: 0 auto; border-collapse: collapse; width: 100%; max-width: 800px; font-size: 0.9em; text-align: left; text-align: center; border: 1px solid #ccc;">
       <thead style="background-color: #f9f9f9;">
@@ -1143,9 +1150,11 @@
       </div>  
 
 
-      
       <div id="semantickitti" class="mapping-content" style="display: none;">
         <h2 style="color: #d1495b; text-align: center;">RealDriveSim → SemanticKITTI</h2>
+        <div style="text-align: center;">
+          <button class="download-json-btn" data-json-path="data/realdrivesim_to_semantickitti_mapping.json">Download as JSON</button>
+        </div>
         <div style="overflow-x: auto; margin-top: 20px;">
           <table style="border-collapse: collapse; width: 90%; max-width: 900px; font-size: 0.9em; border: 1px solid #ccc; margin: auto;">
             <thead style="background-color: #f9f9f9;">
@@ -1246,6 +1255,20 @@
               </div>
       
       
+
+<div style="border-left: 4px solid #d1495b; background-color: #fff7f7; padding: 16px 20px; margin-top: 40px; margin-bottom: 20px; font-size: 1em; color: #333; border-radius: 6px; text-align: justify;">
+  <p style="margin: 10px 0 0;">
+    <strong>Note 1:</strong> The experiments in our paper were conducted using a combined dataset consisting of  
+    <strong>Normal Weather – Sampled Dataset</strong>, <strong>Adverse Weather [Batch 1]</strong>, and <strong>Adverse Weather [Batch 2]</strong>.  
+    If the full Normal Weather dataset is too large for your needs, we recommend using the same sampled version as used in our experiments.
+  </p>
+  <p style="margin: 10px 0 0;">
+    <strong>Note 2:</strong> Compared to the dataset used in the paper, we have added one additional sequence each to Adverse Weather Batch 1 and Batch 2.
+  </p>
+  <p style="margin: 10px 0 0;">
+    <strong>Note 3:</strong> PD-SDK is no longer available or needed; the mappings above include all classes and IDs, so please use them directly. 
+  </p>
+</div>
     </div>
   </div>  <!-- end of all tab-content sections -->
 
@@ -1268,19 +1291,617 @@
       </p> -->
     </footer>
     
-    <script>
-      function openTab(tabId) {
-        const buttons = document.querySelectorAll('.tab-button');
-        const contents = document.querySelectorAll('.tab-content');
-      
-        buttons.forEach(btn => btn.classList.remove('active'));
-        contents.forEach(ct => ct.classList.remove('active'));
-      
-        document.querySelector(`.tab-button[onclick="openTab('${tabId}')"]`).classList.add('active');
-        document.getElementById(tabId).classList.add('active');
+<script>
+  const MAPPINGS_DATA = {
+    'realdrivesim_mapping.json': {
+      "Animal": 0,
+      "Bicycle": 1,
+      "Bicyclist": 2,
+      "Building": 3,
+      "Bus": 4,
+      "Car": 5,
+      "Caravan/RV": 6,
+      "ConstructionVehicle": 7,
+      "CrossWalk": 8,
+      "Fence": 9,
+      "HorizontalPole": 10,
+      "LaneMarking": 11,
+      "LimitLine": 12,
+      "Motorcycle": 13,
+      "Motorcyclist": 14,
+      "OtherDriveableSurface": 15,
+      "OtherFixedStructure": 16,
+      "OtherMovable": 17,
+      "OtherRider": 18,
+      "Overpass/Bridge/Tunnel": 19,
+      "OwnCar(EgoCar)": 20,
+      "ParkingMeter": 21,
+      "Pedestrian": 22,
+      "Railway": 23,
+      "Road": 24,
+      "RoadBarriers": 25,
+      "RoadBoundary(Curb)": 26,
+      "RoadMarking": 27,
+      "SideWalk": 28,
+      "Sky": 29,
+      "TemporaryConstructionObject": 30,
+      "Terrain": 31,
+      "TowedObject": 32,
+      "TrafficLight": 33,
+      "TrafficSign": 34,
+      "Train": 35,
+      "Truck": 36,
+      "Vegetation": 37,
+      "VerticalPole": 38,
+      "WheeledSlow": 39,
+      "LaneMarkingOther": 40,
+      "LaneMarkingGap": 41,
+      "Fence(Transparent)": 42,
+      "StaticObject(Trashcan)": 43,
+      "Vegetation(Bush)": 44,
+      "OtherPole": 45,
+      "Powerline": 46,
+      "SchoolBus": 47,
+      "ParkingLot": 48,
+      "RoadMarkingSpeed": 49,
+      "Vegetation(GroundCover)": 50,
+      "Vegetation(Grass)": 51,
+      "Vegetation(Tree)": 52,
+      "Debris": 53,
+      "RoadBoundary(CurbFlat)": 54,
+      "LaneMarking(Parking)": 55,
+      "LaneMarking(ParkingIndicator)": 56,
+      "RoadMarkingArrows": 57,
+      "RoadMarkingBottsDots": 58,
+      "StopLine": 59,
+      "ChannelizingDevice": 60,
+      "LaneMarkingSpan": 61,
+      "StaticObject(BikeRack)": 62,
+      "ParkingSpot": 63,
+      "RoadBoundary(CurbTop)": 64,
+      "RoadBoundary(CurbSide)": 65,
+      "RoadBoundary(CurbRoadLevel)": 66,
+      "Water": 67,
+      "GuardRail": 68,
+      "Wall": 69,
+      "WheelStopper": 70,
+      "ParkingMarker": 71,
+      "Van": 103,
+      "ConstructionVehicle(Truck)": 104,
+      "DiffusionPrimitive": 200,
+      "Custom": 201,
+      "Parking Gap": 202,
+      "Multipath(Noise)": 225,
+      "ThermalNoise(Noise)": 226,
+      "Fog(Noise)": 227,
+      "Rain(Noise)": 228,
+      "TireSplash(Noise)": 229,
+      "Void": 255
+    },
+  'realdrivesim_to_cityscapes_mapping.json': {
+    "metadata": {
+      "description": "The key is the RealDriveSim label ID, which is mapped to the corresponding RealDriveSim label name, Cityscapes training ID and label name."
+    },
+    "mapping": {
+      "0": {
+        "realdrivesim_name": "Animal",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "dynamic"
+      },
+      "1": {
+        "realdrivesim_name": "Bicycle",
+        "cityscapes_train_id": 18,
+        "cityscapes_name": "bicycle"
+      },
+      "2": {
+        "realdrivesim_name": "Bicyclist",
+        "cityscapes_train_id": 12,
+        "cityscapes_name": "rider"
+      },
+      "3": {
+        "realdrivesim_name": "Building",
+        "cityscapes_train_id": 2,
+        "cityscapes_name": "building"
+      },
+      "4": {
+        "realdrivesim_name": "Bus",
+        "cityscapes_train_id": 15,
+        "cityscapes_name": "bus"
+      },
+      "5": {
+        "realdrivesim_name": "Car",
+        "cityscapes_train_id": 13,
+        "cityscapes_name": "car"
+      },
+      "6": {
+        "realdrivesim_name": "Caravan/RV",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "caravan"
+      },
+      "8": {
+        "realdrivesim_name": "CrossWalk",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "9": {
+        "realdrivesim_name": "Fence",
+        "cityscapes_train_id": 4,
+        "cityscapes_name": "fence"
+      },
+      "10": {
+        "realdrivesim_name": "HorizontalPole",
+        "cityscapes_train_id": 5,
+        "cityscapes_name": "pole"
+      },
+      "11": {
+        "realdrivesim_name": "LaneMarking",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "12": {
+        "realdrivesim_name": "LimitLine",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "13": {
+        "realdrivesim_name": "Motorcycle",
+        "cityscapes_train_id": 17,
+        "cityscapes_name": "motorcycle"
+      },
+      "14": {
+        "realdrivesim_name": "Motorcyclist",
+        "cityscapes_train_id": 12,
+        "cityscapes_name": "rider"
+      },
+      "15": {
+        "realdrivesim_name": "OtherDriveableSurface",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "parking"
+      },
+      "16": {
+        "realdrivesim_name": "OtherFixedStructure",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "static"
+      },
+      "17": {
+        "realdrivesim_name": "OtherMovable",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "dynamic"
+      },
+      "18": {
+        "realdrivesim_name": "OtherRider",
+        "cityscapes_train_id": 12,
+        "cityscapes_name": "rider"
+      },
+      "19": {
+        "realdrivesim_name": "Overpass/Bridge/Tunnel",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "bridge"
+      },
+      "20": {
+        "realdrivesim_name": "OwnCar(EgoCar)",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "ego vehicle"
+      },
+      "21": {
+        "realdrivesim_name": "ParkingMeter",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "static"
+      },
+      "22": {
+        "realdrivesim_name": "Pedestrian",
+        "cityscapes_train_id": 11,
+        "cityscapes_name": "person"
+      },
+      "23": {
+        "realdrivesim_name": "Railway",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "rail track"
+      },
+      "24": {
+        "realdrivesim_name": "Road",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "25": {
+        "realdrivesim_name": "RoadBarriers",
+        "cityscapes_train_id": 3,
+        "cityscapes_name": "wall"
+      },
+      "26": {
+        "realdrivesim_name": "RoadBoundary(Curb)",
+        "cityscapes_train_id": 1,
+        "cityscapes_name": "sidewalk"
+      },
+      "27": {
+        "realdrivesim_name": "RoadMarking",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "28": {
+        "realdrivesim_name": "SideWalk",
+        "cityscapes_train_id": 1,
+        "cityscapes_name": "sidewalk"
+      },
+      "29": {
+        "realdrivesim_name": "Sky",
+        "cityscapes_train_id": 10,
+        "cityscapes_name": "sky"
+      },
+      "30": {
+        "realdrivesim_name": "TemporaryConstructionObject",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "dynamic"
+      },
+      "31": {
+        "realdrivesim_name": "Terrain",
+        "cityscapes_train_id": 9,
+        "cityscapes_name": "terrain"
+      },
+      "32": {
+        "realdrivesim_name": "TowedObject",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "trailer"
+      },
+      "33": {
+        "realdrivesim_name": "TrafficLight",
+        "cityscapes_train_id": 6,
+        "cityscapes_name": "traffic light"
+      },
+      "34": {
+        "realdrivesim_name": "TrafficSign",
+        "cityscapes_train_id": 7,
+        "cityscapes_name": "traffic sign"
+      },
+      "35": {
+        "realdrivesim_name": "Train",
+        "cityscapes_train_id": 16,
+        "cityscapes_name": "train"
+      },
+      "36": {
+        "realdrivesim_name": "Truck",
+        "cityscapes_train_id": 14,
+        "cityscapes_name": "truck"
+      },
+      "37": {
+        "realdrivesim_name": "Vegetation",
+        "cityscapes_train_id": 8,
+        "cityscapes_name": "vegetation"
+      },
+      "38": {
+        "realdrivesim_name": "VerticalPole",
+        "cityscapes_train_id": 5,
+        "cityscapes_name": "pole"
+      },
+      "39": {
+        "realdrivesim_name": "WheeledSlow",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "dynamic"
+      },
+      "40": {
+        "realdrivesim_name": "LaneMarkingOther",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "41": {
+        "realdrivesim_name": "LaneMarkingGap",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "42": {
+        "realdrivesim_name": "Fence(Transparent)",
+        "cityscapes_train_id": 4,
+        "cityscapes_name": "fence"
+      },
+      "43": {
+        "realdrivesim_name": "StaticObject(Trashcan)",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "static"
+      },
+      "44": {
+        "realdrivesim_name": "Vegetation(Bush)",
+        "cityscapes_train_id": 8,
+        "cityscapes_name": "vegetation"
+      },
+      "45": {
+        "realdrivesim_name": "OtherPole",
+        "cityscapes_train_id": 5,
+        "cityscapes_name": "pole"
+      },
+      "46": {
+        "realdrivesim_name": "Powerline",
+        "cityscapes_train_id": 10,
+        "cityscapes_name": "sky"
+      },
+      "47": {
+        "realdrivesim_name": "SchoolBus",
+        "cityscapes_train_id": 15,
+        "cityscapes_name": "bus"
+      },
+      "48": {
+        "realdrivesim_name": "ParkingLot",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "parking"
+      },
+      "49": {
+        "realdrivesim_name": "RoadMarkingSpeed",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "50": {
+        "realdrivesim_name": "Vegetation(GroundCover)",
+        "cityscapes_train_id": 8,
+        "cityscapes_name": "vegetation"
+      },
+      "51": {
+        "realdrivesim_name": "Vegetation(Grass)",
+        "cityscapes_train_id": 8,
+        "cityscapes_name": "vegetation"
+      },
+      "52": {
+        "realdrivesim_name": "Vegetation(Tree)",
+        "cityscapes_train_id": 8,
+        "cityscapes_name": "vegetation"
+      },
+      "53": {
+        "realdrivesim_name": "Debris",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "dynamic"
+      },
+      "54": {
+        "realdrivesim_name": "RoadBoundary(CurbFlat)",
+        "cityscapes_train_id": 1,
+        "cityscapes_name": "sidewalk"
+      },
+      "55": {
+        "realdrivesim_name": "LaneMarking(Parking)",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "parking"
+      },
+      "56": {
+        "realdrivesim_name": "LaneMarking(ParkingIndicator)",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "57": {
+        "realdrivesim_name": "RoadMarkingArrows",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "58": {
+        "realdrivesim_name": "RoadMarkingBottsDots",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "59": {
+        "realdrivesim_name": "StopLine",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "60": {
+        "realdrivesim_name": "ChannelizingDevice",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "dynamic"
+      },
+      "61": {
+        "realdrivesim_name": "LaneMarkingSpan",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "62": {
+        "realdrivesim_name": "StaticObject(BikeRack)",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "static"
+      },
+      "63": {
+        "realdrivesim_name": "ParkingSpot",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "64": {
+        "realdrivesim_name": "RoadBoundary(CurbTop)",
+        "cityscapes_train_id": 1,
+        "cityscapes_name": "sidewalk"
+      },
+      "65": {
+        "realdrivesim_name": "RoadBoundary(CurbSide)",
+        "cityscapes_train_id": 1,
+        "cityscapes_name": "sidewalk"
+      },
+      "66": {
+        "realdrivesim_name": "RoadBoundary(CurbRoadLevel)",
+        "cityscapes_train_id": 0,
+        "cityscapes_name": "road"
+      },
+      "67": {
+        "realdrivesim_name": "Water",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "ground"
+      },
+      "68": {
+        "realdrivesim_name": "GuardRail",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "guard rail"
+      },
+      "69": {
+        "realdrivesim_name": "Wall",
+        "cityscapes_train_id": 3,
+        "cityscapes_name": "wall"
+      },
+      "103": {
+        "realdrivesim_name": "Van",
+        "cityscapes_train_id": 13,
+        "cityscapes_name": "car"
+      },
+      "104": {
+        "realdrivesim_name": "ConstructionVehicle(Truck)",
+        "cityscapes_train_id": 14,
+        "cityscapes_name": "truck"
+      },
+      "255": {
+        "realdrivesim_name": "Void",
+        "cityscapes_train_id": 255,
+        "cityscapes_name": "unlabeled"
       }
-      </script>
+    }
+  }
+  ,
+    'realdrivesim_to_semantickitti_mapping.json': {
+      "Animal": "unlabeled",
+      "Bicycle": "bicyclist",
+      "Bicycle(Parked)": "bicycle",
+      "Bicyclist": "bicyclist",
+      "Building": "building",
+      "Bus": "other-vehicle",
+      "Car": "car",
+      "Caravan/RV": "other-vehicle",
+      "ChannelizingDevice": "unlabeled",
+      "ConstructionVehicle": "other-vehicle",
+      "ConstructionVehicle(Truck)": "truck",
+      "CrossWalk": "road",
+      "Custom": "unlabeled",
+      "Debris": "unlabeled",
+      "DiffusionPrimitive": "unlabeled",
+      "Fence": "fence",
+      "Fence(Transparent)": "fence",
+      "Fog(Noise)": "unlabeled",
+      "GuardRail": "fence",
+      "HorizontalPole": "pole",
+      "LaneMarking": "road",
+      "LaneMarking(Parking)": "parking",
+      "LaneMarking(ParkingIndicator)": "parking",
+      "LaneMarkingGap": "road",
+      "LaneMarkingOther": "road",
+      "LaneMarkingSpan": "road",
+      "LimitLine": "road",
+      "Motorcycle": "motorcyclist",
+      "Motorcycle(Parked)": "motorcycle",
+      "Motorcyclist": "motorcyclist",
+      "Multipath(Noise)": "unlabeled",
+      "OtherDriveableSurface": "other-ground",
+      "OtherFixedStructure": "unlabeled",
+      "OtherMovable": "unlabeled",
+      "OtherPole": "pole",
+      "OtherRider": "unlabeled",
+      "Overpass/Bridge/Tunnel": "building",
+      "OwnCar(EgoCar)": "unlabeled",
+      "Parking Gap": "parking",
+      "ParkingLot": "parking",
+      "ParkingMeter": "unlabeled",
+      "ParkingSpot": "parking",
+      "Pedestrian": "person",
+      "Powerline": "unlabeled",
+      "Railway": "unlabeled",
+      "Rain(Noise)": "unlabeled",
+      "Road": "road",
+      "RoadBarriers": "fence",
+      "RoadBoundary(Curb)": "sidewalk",
+      "RoadBoundary(CurbFlat)": "road",
+      "RoadBoundary(CurbRoadLevel)": "road",
+      "RoadBoundary(CurbSide)": "sidewalk",
+      "RoadBoundary(CurbTop)": "sidewalk",
+      "RoadMarking": "road",
+      "RoadMarkingArrows": "road",
+      "RoadMarkingBottsDots": "road",
+      "RoadMarkingSpeed": "road",
+      "SchoolBus": "other-vehicle",
+      "SideWalk": "sidewalk",
+      "Sky": "unlabeled",
+      "StaticObject(BikeRack)": "unlabeled",
+      "StaticObject(Trashcan)": "unlabeled",
+      "StopLine": "road",
+      "TemporaryConstructionObject": "unlabeled",
+      "Terrain": "terrain",
+      "ThermalNoise(Noise)": "unlabeled",
+      "TireSplash(Noise)": "unlabeled",
+      "TowedObject": "unlabeled",
+      "TrafficLight": "traffic-sign",
+      "TrafficSign": "traffic-sign",
+      "Train": "on-rails",
+      "Truck": "truck",
+      "Van": "other-vehicle",
+      "Vegetation": "vegetation",
+      "Vegetation(Bush)": "vegetation",
+      "Vegetation(Grass)": "terrain",
+      "Vegetation(GroundCover)": "terrain",
+      "Vegetation(Tree)": "vegetation",
+      "Vegetation(TreeTrunk)": "trunk",
+      "VerticalPole": "pole",
+      "Void": "unlabeled",
+      "Wall": "building",
+      "Water": "unlabeled",
+      "WheelStopper": "unlabeled",
+      "WheeledSlow": "unlabeled"
+    }
+  };
+
+  function openTab(tabId) {
+    const buttons = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+  
+    buttons.forEach(btn => btn.classList.remove('active'));
+    contents.forEach(ct => ct.classList.remove('active'));
+  
+    document.querySelector(`.tab-button[onclick="openTab('${tabId}')"]`).classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+  }
+
+  function openMapping(evt, mappingName) {
+    const tabs = document.getElementsByClassName("mapping-content");
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].style.display = "none";
+    }
+  
+    const buttons = document.getElementsByClassName("map-tab");
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove("active");
+    }
+  
+    document.getElementById(mappingName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const downloadButtons = document.querySelectorAll('.download-json-btn');
+
+    function handleDownloadClick(event) {
+      const button = event.currentTarget;
+      const jsonPath = button.dataset.jsonPath;
+      const originalText = button.textContent;
+      const filename = jsonPath.split('/').pop();
+
+      button.disabled = true;
+      button.textContent = 'Downloading...';
+
+      try {
+        const data = MAPPINGS_DATA[filename];
+        if (!data) {
+          throw new Error(`No data found for ${filename}`);
+        }
+        const jsonString = JSON.stringify(data, null, 2);
+        const blob = new Blob([jsonString], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      } catch (error) {
+        console.error('Download failed:', error);
+        alert(`Could not download ${filename}. Please check the console for errors.`);
+      } finally {
+        button.disabled = false;
+        button.textContent = originalText;
+      }
+    }
+
+    downloadButtons.forEach(button => {
+      button.addEventListener('click', handleDownloadClick);
+    });
+  });
+</script>
 
 </body>
 </html>
-
