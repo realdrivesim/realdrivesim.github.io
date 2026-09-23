@@ -587,6 +587,10 @@
         <td colspan="2" style="padding: 10px; font-weight: bold; background-color: #f6f6f6; border-top: 2px solid #ccc;">Other</td>
       </tr>
       <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #eee;">Scene Metadata (per-frame global poses)</td>
+        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather/scene_metadata.zip" target="_blank">103.53 MB</a></td>
+      </tr>
+      <tr>
         <td style="padding: 10px;">Calibration Data</td>
         <td style="padding: 10px;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather/calibration.zip" target="_blank">6 MB</a></td>
       </tr>
@@ -679,6 +683,10 @@
 		<td colspan="2" style="padding: 10px; font-weight: bold; background-color: #f6f6f6; border-top: 2px solid #ccc;">Other</td>
 	      </tr>
 	      <tr>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;">Scene Metadata (per-frame global poses)</td>
+		<td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/scene_metadata.zip" target="_blank">27.23 MB</a></td>
+	      </tr>
+	      <tr>
 		<td style="padding: 10px;">Calibration Data</td>
 		<td style="padding: 10px;"><a href="https://ts.dlr.de/data-lake/realdrivesim/normal-weather-minidataset/calibration.zip" target="_blank">6 MB</a></td>
 	      </tr>
@@ -766,6 +774,10 @@
       <!-- Calibration -->
       <tr>
         <td colspan="2" style="padding: 10px; font-weight: bold; background-color: #f6f6f6; border-top: 2px solid #ccc;">Other</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #eee;">Scene Metadata (per-frame global poses)</td>
+        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/adverse-weather-batch1/scene_metadata.zip" target="_blank">4.23 MB</a></td>
       </tr>
       <tr>
         <td style="padding: 10px;">Calibration Data</td>
@@ -857,6 +869,10 @@
         <td colspan="2" style="padding: 10px; font-weight: bold; background-color: #f6f6f6; border-top: 2px solid #ccc;">Other</td>
       </tr>
       <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #eee;">Scene Metadata (per-frame global poses)</td>
+        <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="https://ts.dlr.de/data-lake/realdrivesim/adverse-weather-batch2/scene_metadata.zip" target="_blank">1.48 MB</a></td>
+      </tr>
+      <tr>
         <td style="padding: 10px;">Calibration Data</td>
         <td style="padding: 10px;"><a href="https://ts.dlr.de/data-lake/realdrivesim/adverse-weather-batch2/calibration.zip" target="_blank">88 KB</a></td>
       </tr>
@@ -932,7 +948,7 @@
     <strong>Note 3:</strong> PD-SDK is no longer available or needed; the mappings above include all classes and IDs, so please use them directly.
   </p>
   <p style="margin: 10px 0 0;">
-    <strong>Note 4:</strong> Odometry data is included within the motion vector files (2D and 3D).
+    <strong>Note 4:</strong> Per-frame global sensor poses are provided in the Scene Metadata archive. For each image or point-cloud datum, <code>pose.translation</code> gives the global translation and <code>pose.rotation</code> gives the quaternion rotation (<code>qw</code>, <code>qx</code>, <code>qy</code>, <code>qz</code>). Combine these with the corresponding calibration extrinsics to obtain ego-vehicle poses. The 2D and 3D motion-vector files provide optical flow and scene flow; they do not contain separate ego-pose fields.
   </p>
 </div>
 </div>
@@ -1272,7 +1288,7 @@
     <strong>Note 3:</strong> PD-SDK is no longer available or needed; the mappings above include all classes and IDs, so please use them directly.
   </p>
   <p style="margin: 10px 0 0;">
-    <strong>Note 4:</strong> Odometry data is included within the motion vector files (2D and 3D).
+    <strong>Note 4:</strong> Per-frame global sensor poses are provided in the Scene Metadata archive. For each image or point-cloud datum, <code>pose.translation</code> gives the global translation and <code>pose.rotation</code> gives the quaternion rotation (<code>qw</code>, <code>qx</code>, <code>qy</code>, <code>qz</code>). Combine these with the corresponding calibration extrinsics to obtain ego-vehicle poses. The 2D and 3D motion-vector files provide optical flow and scene flow; they do not contain separate ego-pose fields.
   </p>
 </div>
     </div>
